@@ -38,7 +38,7 @@ from app.api import bp as api_bp
 app.register_blueprint(api_bp, url_prefix='/api')
 
 # Import routes and models
-from app import routes, models
+from app import  models
 
 # Run the Flask app if this script is run directly
 if __name__ == '__main__':

@@ -17,7 +17,6 @@ class User(UserMixin, db.Model):
     username: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)  
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True)
     password_hash: so.Mapped[str] = so.mapped_column(sa.String(256))
-    re_password_hash: so.Mapped[str] = so.mapped_column(sa.String(256))
     bookmarks = relationship('Bookmark', backref='user', lazy='dynamic')
     folders = relationship('Folder', backref='user', lazy='dynamic')
     @property

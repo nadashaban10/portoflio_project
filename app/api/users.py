@@ -3,6 +3,8 @@ from flask_login import current_user
 from app.api import bp
 from flask import jsonify, make_response
 from app import db
+from app import app
+import app.models
 from app.models import User, Folder, Bookmark
 from flask import request
 from werkzeug.exceptions import BadRequest

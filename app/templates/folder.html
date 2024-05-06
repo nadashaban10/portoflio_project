@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ folder.name }}</h1>
+
+<h2>Bookmarks</h2>
+<ul>
+  {% for bookmark in folder.bookmarks %}
+  <li><a href="{{ bookmark.url }}">{{ bookmark.url }}</a></li>
+  {% endfor %}
+</ul>
+
+<a href="{{ url_for('profile') }}">Back to profile</a>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<h1>User Profile</h1>
+
+<p>Welcome, {{ user.username }}</p>
+
+<h2>Add Bookmark</h2>
+<br>
+<form method="POST" action="{{ url_for('add_bookmark') }}">  <div class="form-group">
+    <label for="url">URL:</label>
+    <input type="url" class="form-control" id="url" name="url" required>
+  </div>
+  <div class="form-group">
+    <label for="folder_name">Folder Name:</label>
+    <input type="text" class="form-control" id="folder_name" name="folder_name" >
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Add Bookmark</button>
+</form>
+<br>
+<h2>Your Folders</h2>
+{% for folder in user.folders %}
+  <p>
+    <a href="{{ url_for('folder', folder_id=folder.id) }}" class="btn btn-primary">Go to {{ folder.name }}</a>
+  </p>
+{% endfor %}
+
+{% endblock %}

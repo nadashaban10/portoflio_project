@@ -37,9 +37,5 @@ login.login_view = 'login'
 from app.api import bp as api_bp
 app.register_blueprint(api_bp, url_prefix='/api')
 
-
-
-
-# Run the Flask app if this script is run directly
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run
